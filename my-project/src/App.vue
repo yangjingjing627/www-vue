@@ -1,14 +1,13 @@
 <template>
   <div id="app">
     <topbar></topbar>
-    <div class="mainbar">
-      <sidebar v-bind:class="{ active: isActive}"></sidebar>
-    </div>
+    <wrapper></wrapper>
+    
   </div>
 </template>
 
 <script>
-import sidebar from './script/views/common/sidebar.vue'
+import wrapper from './script/views/common/wrapper.vue'
 import topbar from './script/views/common/topbar.vue'
 
 export default {
@@ -18,7 +17,7 @@ export default {
       isActive: true
     }
   },
-  components: { sidebar, topbar }
+  components: { wrapper, topbar }
 }
 </script>
 

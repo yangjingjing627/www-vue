@@ -1,5 +1,5 @@
 <template>
-  <div id="sales" class="right-side">
+  <div id="sales">
     <div class="recent">
       <div class="recent-title">{{ formName }}</div>
       <div class="order-q-left">

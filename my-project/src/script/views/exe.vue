@@ -1,5 +1,5 @@
 <template>
-  <div id="exe" class="right-side">
+  <div id="exe">
     <div class="">
       <input type="button" name="name" value="forOf" @click="forOf">
       <input type="button" name="name" value="codeAt" @click="codeAt">

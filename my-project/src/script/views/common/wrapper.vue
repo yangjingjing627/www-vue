@@ -1,16 +1,14 @@
 <template>
-  <div id="side-bar">
-    <div class="side-menu" id="sideMenu">
-      <ul>
-        <li v-for="item,index in list" :class="{active: item.style === toPath}">
-          <router-link :to="item.url" >{{ item.name }}</router-link>
-        </li>
-      </ul>
+  <div id="wrapper">
+    <sidebar></sidebar>
+    <div class="right-side">
+      <router-view></router-view>
     </div>
   </div>
 </template>
 <script>
 import API from '../../../store/api.js'
+import sidebar from './sidebar.vue'
 export default {
   name: '',
   data () {
@@ -56,6 +54,7 @@ export default {
       array: [ 1.2, 4, 5, 6 ]
     }
   },
+  components: { sidebar },
   created () {
     this.sel()
     this.active()

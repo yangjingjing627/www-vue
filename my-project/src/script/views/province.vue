@@ -1,5 +1,5 @@
 <template>
-  <div id="province" class="right-side">
+  <div id="province">
     <div id="provinceChart">
 
     </div>

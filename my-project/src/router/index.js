@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Sidebar from '../script/views/common/sidebar.vue'
+import Wrapper from '../script/views/common/wrapper.vue'
 import Login from '../script/views/account/login.vue'
 import Province from '../script/views/province.vue'
 import Sales from '../script/views/sales.vue'
@@ -15,8 +15,8 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'Sidebar',
-      component: Sidebar,
+      name: 'Wrapper',
+      component: Wrapper,
       children: [
         { path: '/login', component: Login },
         { path: '/province', component: Province },
