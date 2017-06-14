@@ -39,49 +39,51 @@
     margin-left: 10px;
     height: 50%;
     overflow: scroll;
-    .top-goods-list {
-      display: flex;
-      // border-left: 1px solid #CCCCCC;
-      // border-top: 1px solid #CCCCCC;
-      li{
-        box-sizing: border-box;
-        font-size: 0;
-        flex: 1;
-        display: block;
-        align-items: center;
-        justify-content: center;
-        border: 0;
-        border-top: 1px solid #CCCCCC;
-        &:first-child {
-          span {
-            border-left: 1px solid #CCCCCC;
-          }
-        }
-        span{
-          font-size: 12px;
-          line-height: 50px;
-          text-align: center;
-          vertical-align: middle;
-          border-right: 1px solid #CCCCCC;
-          border-bottom: 1px solid #CCCCCC;
-          display: block;
-          box-sizing: border-box;
-          display: block;
-          height: 50%;
-          color: #666666;
-          overflow-y: auto;
-          background-color: none;
-          &.count-data,&.count {
-            flex: 1;
-            // height: 1.3rem;
-            vertical-align: middle;
-          }
-          &.count {
-            line-height: 1.3rem;
-          }
 
-        }
+  }
+}
+
+.top-goods-list {
+  display: flex;
+  // border-left: 1px solid #CCCCCC;
+  // border-top: 1px solid #CCCCCC;
+  li{
+    box-sizing: border-box;
+    font-size: 0;
+    flex: 1;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-top: 1px solid #CCCCCC;
+    &:first-child {
+      span {
+        border-left: 1px solid #CCCCCC;
       }
+    }
+    span{
+      font-size: 12px;
+      line-height: 50px;
+      text-align: center;
+      vertical-align: middle;
+      border-right: 1px solid #CCCCCC;
+      border-bottom: 1px solid #CCCCCC;
+      display: block;
+      box-sizing: border-box;
+      display: block;
+      height: 50%;
+      color: #666666;
+      overflow-y: auto;
+      background-color: none;
+      &.count-data,&.count {
+        flex: 1;
+        // height: 1.3rem;
+        vertical-align: middle;
+      }
+      &.count {
+        line-height: 1.3rem;
+      }
+
     }
   }
 }

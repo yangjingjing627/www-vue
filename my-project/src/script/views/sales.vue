@@ -47,6 +47,7 @@ export default {
     // do something after creating vue instance
     this.billCount()
     this.billAmount()
+    this.goods()
   },
   mounted: function () {
     this.getPathname()
@@ -80,6 +81,12 @@ export default {
           self.salesAmount.push(str2)
         }
         this.circle(document.getElementById('sales-p'), self.dataTwo)
+      })
+    },
+    goods () {
+      var self = this
+      self.$http.get(API.goods, {params: {cateId: 2, next: 0}}).then((res) => {
+        console.log(JSON.stringify(res.data) + '----goods---')
       })
     },
     circle (opt, data) {

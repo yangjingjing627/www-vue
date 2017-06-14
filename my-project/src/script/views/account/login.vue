@@ -3,12 +3,12 @@
     <div id="login-wrap">
   		<form class="login">
   			<div class="logo">好升益数据查询平台</div>
-  			<input id="username" type="text" placeholder="账号/手机号" maxlength="12">
-  			<input id="password" type="password"  placeholder="密码" maxlength="12">
+  			<input id="username" type="text" placeholder="账号/手机号" maxlength="12" v-model="user.name">
+  			<input id="password" type="password"  placeholder="密码" maxlength="12" v-model="user.password">
   			<button class="login-btn" @click="login">登录</button>
   			<div class="tips">
-  				<a class="left" href="#/license-key">开店</a>
-  				<a class="right" href="#/find-password">找回店主密码</a>
+  				<a class="left" href="#/license-key">注册</a>
+  				<a class="right" href="#/find-password">找回密码</a>
   			</div>
   		</form>
   		<div class="warning" id="login-warning" style="display:none">
@@ -20,18 +20,49 @@
   </div>
 </template>
 <script>
+import API from '../../../store/api.js'
+import { Notifiy } from '../../utils/toast.js'
+
 export default {
   name: 'login',
   data () {
     return {
-
+      newligin: false,
+      user: {
+        name: '',
+        password: '',
+        imeCode: '2021414914044598'
+      },
+      codeImg: '',
+      Timestamp: '',
+      hasCode: true
     }
   },
   methods: {
-    login () {
+    login (e) {
       var self = this
-      var url = '/sales'
-      self.$router.push(url)
+      e.preventDefault(e)
+      if (!self.user.name) {
+        Notifiy('提示', '请输入用户名', 'info')
+        return
+      }
+      if (!self.user.password) {
+        Notifiy('提示', '请输入密码', 'info')
+        return
+      }
+      let params = self.user
+      self.$http.post(API.login, params).then((res) => {
+        ('--login--')
+        var localStorage = window.localStorage
+        // var sessionStorage = window.sessionStorage
+        self.data = res.data
+        if (self.data.code === 1) {
+          if (localStorage) {
+            localStorage.userInfo = JSON.stringify(res.data)
+          }
+          self.$router.replace('/sales')
+        }
+      })
     }
   }
 }

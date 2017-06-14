@@ -17,7 +17,7 @@ export default {
     return {
       toPath: '',
       list: [{
-        name: '本周',
+        name: '收银',
         style: 'province',
         url: '/province',
         active: true,
@@ -26,7 +26,7 @@ export default {
         tags: []
       },
       {
-        name: '今日订单',
+        name: '订单',
         style: 'orders',
         url: '/orders',
         active: true,
@@ -35,7 +35,7 @@ export default {
         tags: []
       },
       {
-        name: '今日结算单',
+        name: '商品',
         style: 'sales',
         url: '/sales',
         active: true,

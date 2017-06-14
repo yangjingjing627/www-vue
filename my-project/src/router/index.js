@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Wrapper from '../script/views/common/wrapper.vue'
+// import Wrapper from '../script/views/common/wrapper.vue'
+import Rightbar from '../script/views/common/rightbar.vue'
+
 import Login from '../script/views/account/login.vue'
 import Province from '../script/views/province.vue'
 import Sales from '../script/views/sales.vue'
@@ -15,10 +17,9 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'Wrapper',
-      component: Wrapper,
+      name: 'Rightbar',
+      component: Rightbar,
       children: [
-        { path: '/login', component: Login },
         { path: '/province', component: Province },
         { path: '/sales', component: Sales },
         { path: '/orders', component: Orders },
@@ -31,7 +32,7 @@ const router = new Router({
         { path: '/exe/ele', component: Eleui },
         { path: '/exe/vuexEx', component: VuexEx }
       ]
-    }
+    }, { path: '/login', component: Login }
   ]
 })
 export default router

@@ -2,14 +2,12 @@
   <div id="app">
     <topbar></topbar>
     <wrapper></wrapper>
-    
   </div>
 </template>
 
 <script>
 import wrapper from './script/views/common/wrapper.vue'
 import topbar from './script/views/common/topbar.vue'
-
 export default {
   name: 'app',
   data () {

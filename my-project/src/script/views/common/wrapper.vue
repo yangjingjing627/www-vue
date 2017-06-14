@@ -1,14 +1,14 @@
 <template>
   <div id="wrapper">
     <sidebar></sidebar>
-    <div class="right-side">
-      <router-view></router-view>
-    </div>
+    <rightbar></rightbar>
   </div>
 </template>
 <script>
 import API from '../../../store/api.js'
 import sidebar from './sidebar.vue'
+import rightbar from './rightbar.vue'
+
 export default {
   name: '',
   data () {
@@ -54,7 +54,7 @@ export default {
       array: [ 1.2, 4, 5, 6 ]
     }
   },
-  components: { sidebar },
+  components: { sidebar, rightbar },
   created () {
     this.sel()
     this.active()
