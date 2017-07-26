@@ -3,7 +3,7 @@
     <div id="login-wrap">
   		<form class="login">
   			<div class="logo">好升益数据查询平台</div>
-  			<input id="username" type="text" placeholder="账号/手机号" maxlength="12" v-model="user.name">
+  			<input id="username" type="text" placeholder="账号/手机号" maxlength="12" v-model="user.username">
   			<input id="password" type="password"  placeholder="密码" maxlength="12" v-model="user.password">
   			<button class="login-btn" @click="login">登录</button>
   			<div class="tips">
@@ -21,7 +21,6 @@
 </template>
 <script>
 import API from '../../../store/api.js'
-import { Notifiy } from '../../utils/toast.js'
 
 export default {
   name: 'login',
@@ -29,8 +28,8 @@ export default {
     return {
       newligin: false,
       user: {
-        name: '',
-        password: '',
+        password: '123456',
+        username: '13661179320',
         imeCode: '2021414914044598'
       },
       codeImg: '',
@@ -42,14 +41,6 @@ export default {
     login (e) {
       var self = this
       e.preventDefault(e)
-      if (!self.user.name) {
-        Notifiy('提示', '请输入用户名', 'info')
-        return
-      }
-      if (!self.user.password) {
-        Notifiy('提示', '请输入密码', 'info')
-        return
-      }
       let params = self.user
       self.$http.post(API.login, params).then((res) => {
         ('--login--')
